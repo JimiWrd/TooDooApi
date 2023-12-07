@@ -38,8 +38,7 @@ jobs:
         uses: gradle/gradle-build-action@v2.10.0
 
       - name: Build With Gradle
-        run: |
-          SPRING_PROFILES_ACTIVE=dev gradle build
+        run: gradle build -x test
 
       - name: Test With Gradle
         run: |
