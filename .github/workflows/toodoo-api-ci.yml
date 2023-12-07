@@ -15,7 +15,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     services:
-      postgres_db:
+      db:
         image: postgres
         env:
           POSTGRES_USER: postgres
@@ -38,4 +38,9 @@ jobs:
         uses: gradle/gradle-build-action@v2.10.0
 
       - name: Build With Gradle
-        run: SPRING_PROFILES_ACTIVE=dev gradle build
+        run: |
+          SPRING_PROFILES_ACTIVE=dev gradle build
+
+      - name: Test With Gradle
+        run: |
+          SPRING_PROFILES_ACTIVE=dev gradle test
