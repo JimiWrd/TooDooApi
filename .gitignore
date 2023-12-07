@@ -4,6 +4,8 @@ build/
 !gradle/wrapper/gradle-wrapper.jar
 !**/src/main/**/build/
 !**/src/test/**/build/
+# Ignore the locally saved postgreSQL data
+postgres-data/
 
 # Compiled class file
 *.class
@@ -38,6 +40,7 @@ replay_pid*
 out/
 !**/src/main/**/out/
 !**/src/test/**/out/
+.run/
 
 ### STS ###
 .apt_generated
