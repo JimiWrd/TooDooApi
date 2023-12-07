@@ -38,4 +38,4 @@ jobs:
         uses: gradle/gradle-build-action@v2.10.0
 
       - name: Build With Gradle
-        run: ./gradlew build
+        run: gradle build
