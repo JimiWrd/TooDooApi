@@ -36,11 +36,8 @@ class TooDooController @Autowired constructor(private val tooDooService: TooDooS
 
     @GetMapping("/get/{id}")
     fun getTooDoo(@PathVariable("id") id: Long): ResponseEntity<TooDooResponseDto> {
-        return try {
-            val response = tooDooService.getTooDoo(id)
-            ResponseEntity.ok(response)
-        } catch (e: Exception) {
-            ResponseEntity.badRequest().build()
-        }
+        val response = tooDooService.getTooDoo(id)
+        return ResponseEntity.ok(response)
     }
+
 }
