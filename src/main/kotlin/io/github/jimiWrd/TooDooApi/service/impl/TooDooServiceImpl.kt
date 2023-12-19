@@ -21,4 +21,10 @@ class TooDooServiceImpl @Autowired constructor(private val tooDooRepository: Too
         val responseDto = tooDooMapper.toTooDooResponseDto(response)
         return responseDto
     }
+
+    override fun getAllTooDooTasks(): List<TooDooResponseDto> {
+        val response = tooDooRepository.findAll()
+        val responseDto = response.map { tooDooMapper.toTooDooResponseDto(it) }
+        return responseDto
+    }
 }
