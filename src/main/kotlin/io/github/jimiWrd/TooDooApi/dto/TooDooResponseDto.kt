@@ -1,9 +1,11 @@
 package io.github.jimiWrd.TooDooApi.dto
 
+import java.time.LocalDate
+
 data class TooDooResponseDto (
-    val id: Long,
-    val title: String,
-    val description: String,
-    val priority: Int,
-    val dueDate: String
+    var id: Long,
+    var title: String,
+    var description: String,
+    var priority: Int,
+    var dueDate: LocalDate
 )
