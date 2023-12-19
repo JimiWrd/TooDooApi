@@ -43,4 +43,14 @@ class TooDooServiceUnitTests {
         
         Assertions.assertThat(result).usingRecursiveComparison().ignoringFields("createdAt").isEqualTo(validTooDoo)
     }
+
+    @Test
+    fun `service should return a list of TooDooTask entities when getAllTooDooTasks is called`() {
+        val tooDooList = listOf(validTooDoo, validTooDoo)
+        `when`(tooDooRepository.findAll()).thenReturn(tooDooList)
+
+        val result = tooDooService.getAllTooDooTasks()
+
+        Assertions.assertThat(result).usingRecursiveComparison().ignoringFields("createdAt").isEqualTo(tooDooList)
+    }
 }
